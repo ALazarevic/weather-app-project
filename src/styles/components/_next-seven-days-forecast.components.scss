@@ -1,15 +1,25 @@
 .c-next-seven-days-forecast {
 
-  &__temp {
-    font-size: 24px;
+  &__day {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 24px;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: #08153E;
+    opacity: 0.6;
   }
 
-  &__celsius {
-    vertical-align: super;
-    font-size: 16px;
+  &__temp {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
   }
 
   &__degree {
-    font-size: 22px;
+    font-size: 14px;
+    vertical-align: text-bottom;
+    line-height: 24px;
   }
 }

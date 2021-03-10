@@ -1,12 +1,11 @@
 <div *ngIf="showAverageTemp" class="my-5">
     <div class="text-center">
-        <p class="text-secondary c-average-temperature__dates">
+        <p class="c-average-temperature__dates">
             {{ nextForecastDay | date: "MMM d" | uppercase }} -
             {{ lastForecastDay | date: "d YYYY" | uppercase }}
         </p>
         <h5 class="text-white c-average-temperature">{{ avarageTemp }}<span
-                class="c-average-temperature__degree">&#176;</span>
-            <span class="c-average-temperature__celsius">C</span>
+                class="c-average-temperature__degree">&#176;C</span>
         </h5>
     </div>
 </div>

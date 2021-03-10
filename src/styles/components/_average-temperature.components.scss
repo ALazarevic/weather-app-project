@@ -12,16 +12,9 @@
     opacity: 0.6;
   }
 
-  &__celsius {
-    vertical-align: top;
-    font-size: 34px;
-    line-height: 78px;
-  }
-
   &__degree {
-    font-weight: 600;
-    font-size: 48px;
-    line-height: 32px;
-    vertical-align: super;
+    vertical-align: text-top;
+    font-size: 24px;
+    line-height: 75px;
   }
 }
