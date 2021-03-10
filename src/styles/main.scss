@@ -6,3 +6,6 @@
 
 // Import styles for select
 @import "~@ng-select/ng-select/themes/default.theme.css";
+
+@import "./layout/body.layout";
+@import "./components/location-search.component.scss";

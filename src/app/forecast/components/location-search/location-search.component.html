@@ -1,1 +1,36 @@
-<p>location-search works!</p>
+<div
+    class="py-4 px-2 px-md-4 mt-2 mt-md-0 bg-white c-location-search flex-fill col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+    <form name="setLocationForm" [formGroup]="locationForm" class="d-block d-md-flex align-items-center col-12 px-0">
+        <div class="d-flex align-items-center mb-2 mb-sm-0 col-12 col-md-4">
+            <div class="col-2 pl-0">
+                <img class="c-location-search__weather-icon" src="assets/images/weather-icon.svg" />
+            </div>
+            <ng-select #countrySelect formControlName="countryList" [virtualScroll]="true"
+                (change)="onCountryCodeSelectionChange()" (close)="getListOfCities()" [searchFn]="customSearchFn"
+                [items]="listOfCountries" bindLabel="alpha2Code" bindValue="alpha2Code" [clearable]="false"
+                [loading]="isCountryListLoading" class="c-location-search__country-select col-10 col-md-10 pr-0">
+                <ng-template ng-label-tmp let-item="item">
+                    <img height="15" width="25" [src]="item.flag" />
+                    <b>{{item.alpha2Code}}</b>
+                </ng-template>
+                <ng-template ng-option-tmp let-item="item" let-index="index">
+                    <img height="15" width="25" [src]="item.flag" />
+                    <span>{{item.alpha2Code}}</span>
+                </ng-template>
+            </ng-select>
+        </div>
+
+        <div class="col-12 col-md-8">
+            <!-- TODO Save user last selection and load it on init -->
+            <ng-select #citySelect formControlName="citiesList" [virtualScroll]="true" loadingText="Loading..."
+                [loading]="isCityListLoading" placeholder="Please enter your location..."
+                class="col-12 px-0 c-location-search__city-search" [clearable]="false">
+                <ng-option *ngFor="let city of listOfCitiesByCountry" [value]="city">
+                    <span>{{city.toponymName}}</span>
+                </ng-option>
+            </ng-select>
+            <img *ngIf="!isCityListLoading" class="c-location-search__search-icon" height="15" width="15"
+                src="assets/images/search-icon.svg">
+        </div>
+    </form>
+</div>
