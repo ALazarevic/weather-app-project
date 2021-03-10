@@ -1,1 +1,11 @@
-<p>next-seven-days-forecast works!</p>
+<div class="container">
+    <div class="row text-center">
+        <div *ngFor="let dayForecast of forecastedDays" class="col-4 col-md-3 col-lg-2 col-xl-1 mx-auto mb-3 px-2">
+            <div class="text-secondary">{{ dayForecast.date | date: 'EEEE' }}</div>
+            <h5 class="text-white c-next-seven-days-forecast__temp">{{ dayForecast.averageTemperature }}<span
+                    class="align-top c-next-seven-days-forecast__degree">&#176;</span>
+                <span class="c-next-seven-days-forecast__celsius">C</span>
+            </h5>
+        </div>
+    </div>
+</div>
