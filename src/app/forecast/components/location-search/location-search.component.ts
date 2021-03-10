@@ -106,10 +106,11 @@ export class LocationSearchComponent implements OnInit {
    * On city selection, get weather forecast.
    */
   onCitySelectionClose() {
-    let cityName: string = this.locationForm.get('citiesList')?.value.name;
+    let cityLat: string = this.locationForm.get('citiesList')?.value.lat;
+    let cityLon: string = this.locationForm.get('citiesList')?.value.lng;
 
-    if (cityName) {
-      this.weatherService.getWeatherForecast(this.locationForm.get('citiesList')?.value.name).subscribe(response => {
+    if (cityLat && cityLon) {
+      this.weatherService.getWeatherForecast(cityLat, cityLon).subscribe(response => {
         console.log(response);
       })
     }
