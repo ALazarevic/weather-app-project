@@ -1,11 +1,15 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { NgSelectComponent } from '@ng-select/ng-select';
+import { Store } from '@ngrx/store';
 import { City } from 'src/app/core/models/city.model';
 import { Country } from 'src/app/core/models/country.model';
 import { UserCountry } from 'src/app/core/models/userCountry.model';
+import { WeatherForecast } from 'src/app/core/models/weatherForecast.model';
 import { LocationService } from 'src/app/core/services/location/location.service';
 import { WeatherService } from 'src/app/core/services/weather/weather.service';
+import { SetWeather } from 'src/app/core/store/store.actions';
+import { AppState } from 'src/app/core/store/store.reducers';
 
 @Component({
   selector: 'app-location-search',
@@ -23,7 +27,8 @@ export class LocationSearchComponent implements OnInit {
   @ViewChild('countrySelect') ngSelect!: NgSelectComponent;
   @ViewChild('citySelect') ngSelectCity!: NgSelectComponent;
 
-  constructor(private fb: FormBuilder, private locationService: LocationService, private weatherService: WeatherService) { }
+  constructor(private fb: FormBuilder, private locationService: LocationService, private weatherService: WeatherService,
+    private store: Store<AppState>) { }
 
   ngOnInit(): void {
     this.createLocationForm();
@@ -110,8 +115,8 @@ export class LocationSearchComponent implements OnInit {
     let cityLon: string = this.locationForm.get('citiesList')?.value.lng;
 
     if (cityLat && cityLon) {
-      this.weatherService.getWeatherForecast(cityLat, cityLon).subscribe(response => {
-        console.log(response);
+      this.weatherService.getWeatherForecast(cityLat, cityLon).subscribe((response: WeatherForecast) => {
+        this.store.dispatch(new SetWeather(response))
       })
     }
   }
