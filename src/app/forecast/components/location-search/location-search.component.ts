@@ -5,6 +5,7 @@ import { City } from 'src/app/core/models/city.model';
 import { Country } from 'src/app/core/models/country.model';
 import { UserCountry } from 'src/app/core/models/userCountry.model';
 import { LocationService } from 'src/app/core/services/location/location.service';
+import { WeatherService } from 'src/app/core/services/weather/weather.service';
 
 @Component({
   selector: 'app-location-search',
@@ -22,7 +23,7 @@ export class LocationSearchComponent implements OnInit {
   @ViewChild('countrySelect') ngSelect!: NgSelectComponent;
   @ViewChild('citySelect') ngSelectCity!: NgSelectComponent;
 
-  constructor(private fb: FormBuilder, private locationService: LocationService) { }
+  constructor(private fb: FormBuilder, private locationService: LocationService, private weatherService: WeatherService) { }
 
   ngOnInit(): void {
     this.createLocationForm();
@@ -99,6 +100,19 @@ export class LocationSearchComponent implements OnInit {
     term = term.toLocaleLowerCase();
     return item.alpha2Code.toLocaleLowerCase().indexOf(term) > -1 ||
       item.name.toLocaleLowerCase().indexOf(term) > -1;
+  }
+
+  /**
+   * On city selection, get weather forecast.
+   */
+  onCitySelectionClose() {
+    let cityName: string = this.locationForm.get('citiesList')?.value.name;
+
+    if (cityName) {
+      this.weatherService.getWeatherForecast(this.locationForm.get('citiesList')?.value.name).subscribe(response => {
+        console.log(response);
+      })
+    }
   }
 
 }

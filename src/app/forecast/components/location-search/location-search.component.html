@@ -24,7 +24,7 @@
             <!-- TODO Save user last selection and load it on init -->
             <ng-select #citySelect formControlName="citiesList" [virtualScroll]="true" loadingText="Loading..."
                 [loading]="isCityListLoading" placeholder="Please enter your location..."
-                class="col-12 px-0 c-location-search__city-search" [clearable]="false">
+                (close)="onCitySelectionClose()" class="col-12 px-0 c-location-search__city-search" [clearable]="false">
                 <ng-option *ngFor="let city of listOfCitiesByCountry" [value]="city">
                     <span>{{city.toponymName}}</span>
                 </ng-option>
