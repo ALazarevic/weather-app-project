@@ -11,7 +11,7 @@ export class WeatherService {
 
   private weatherForecastUrlBase: string = 'https://api.weatherbit.io/v2.0/forecast/daily?lat=';
   private weatherForecastUrlLonParam: string = '&lon=';
-  private weatherForecastUrlParamsAndKey: string = '&days=10&key=187b8a227efd438186f6a3e1d68a947c';
+  private weatherForecastUrlParamsAndKey: string = '&days=11&key=187b8a227efd438186f6a3e1d68a947c';
 
   constructor(private http: HttpClient) { }
 

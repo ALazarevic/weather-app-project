@@ -1,0 +1,12 @@
+.c-average-temperature {
+  font-size: 40px;
+
+  &__celsius {
+    vertical-align: super;
+    font-size: 22px;
+  }
+
+  &__degree {
+    font-size: 32px;
+  }
+}
