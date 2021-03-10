@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 import { DailyForecast } from 'src/app/core/models/dailyForecast.model';
@@ -10,7 +10,7 @@ import { AppState, State } from 'src/app/core/store/store.reducers';
   templateUrl: './next-seven-days-forecast.component.html',
   styleUrls: ['./next-seven-days-forecast.component.scss']
 })
-export class NextSevenDaysForecastComponent implements OnInit {
+export class NextSevenDaysForecastComponent implements OnInit, OnDestroy {
 
   private subscription: Subscription = new Subscription();
   public dailyForecast!: DailyForecast[];

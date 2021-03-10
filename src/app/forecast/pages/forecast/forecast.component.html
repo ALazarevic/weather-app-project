@@ -2,10 +2,10 @@
     <div>
         <app-location-search></app-location-search>
     </div>
-    <div>
+    <div *ngIf="showAverageTemp" class="">
         <app-average-temperature></app-average-temperature>
     </div>
-    <div>
+    <div *ngIf="showAverageTemp" class="">
         <app-next-seven-days-forecast></app-next-seven-days-forecast>
     </div>
 </div>
