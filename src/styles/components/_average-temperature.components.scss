@@ -1,12 +1,27 @@
 .c-average-temperature {
-  font-size: 40px;
+  font-weight: 600;
+  font-size: 120px;
+  line-height: 120px;
+
+  &__dates {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 24px;
+    letter-spacing: 0.06em;
+    color: #08153E;
+    opacity: 0.6;
+  }
 
   &__celsius {
-    vertical-align: super;
-    font-size: 22px;
+    vertical-align: top;
+    font-size: 34px;
+    line-height: 78px;
   }
 
   &__degree {
-    font-size: 32px;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 32px;
+    vertical-align: super;
   }
 }
