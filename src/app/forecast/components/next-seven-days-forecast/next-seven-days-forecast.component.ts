@@ -22,7 +22,7 @@ export class NextSevenDaysForecastComponent implements OnInit {
     this.subscription = this.store.select('store').subscribe((state: State) => {
       this.dailyForecast = state.weather.data;
 
-      this.dailyForecast = this.dailyForecast?.slice(1); // skip first item, api returns current day.
+      this.dailyForecast = this.dailyForecast?.slice(1, 8); // Take forecast for next 7 days.
 
       this.forecastedDays = this.dailyForecast?.map(day => {
         const convertedDate = day.datetime;
