@@ -2,7 +2,7 @@
     class="py-4 px-2 px-md-4 mt-2 mt-md-0 bg-white c-location-search flex-fill col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
     <form name="setLocationForm" [formGroup]="locationForm" class="d-block d-md-flex align-items-center col-12 px-0">
         <div class="d-flex align-items-center mb-2 mb-sm-0 col-12 col-md-4">
-            <div class="col-2 pl-0">
+            <div class="col-2 pl-0 mr-md-3">
                 <img class="c-location-search__weather-icon" src="assets/images/weather-icon.svg" />
             </div>
             <ng-select #countrySelect formControlName="countryList" [virtualScroll]="true"
@@ -29,7 +29,7 @@
                     <span>{{city.toponymName}}</span>
                 </ng-option>
             </ng-select>
-            <img *ngIf="!isCityListLoading" class="c-location-search__search-icon" height="15" width="15"
+            <img *ngIf="!isCityListLoading" class="c-location-search__search-icon" height="24" width="24"
                 src="assets/images/search-icon.svg">
         </div>
     </form>

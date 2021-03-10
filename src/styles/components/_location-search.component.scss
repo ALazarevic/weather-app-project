@@ -1,20 +1,23 @@
 .c-location-search {
-  border-radius: 10px;
+  border-radius: 16px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 
   &__weather-icon {
-    height: 40px;
-    width: 40px;
+    height: 48px;
+    width: 48px;
   }
 
   &__country-select {
+    height: 48px;
+
     img {
-      padding-right: 4px;
+      margin-right: 10px;
     }
   }
 
   &__city-search {
     position: relative;
+    height: 48px;
   }
 
   &__city-search.ng-select-focused .ng-select-container {
@@ -28,13 +31,36 @@
     top: 11px;
   }
 
+  .ng-select-container {
+    height: 48px !important;
+    border-radius: 6px;
+  }
+
   .ng-option,
   .ng-value {
     display: flex !important;
     align-items: center;
+
+    b {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    img {
+      border: 1px solid #08153E;
+      border-radius: 3px;
+    }
   }
 
   .ng-value {
     margin: 0 5px;
+  }
+
+  .ng-input {
+    height: 36px;
+
+    input {
+      height: 36px;
+    }
   }
 }
