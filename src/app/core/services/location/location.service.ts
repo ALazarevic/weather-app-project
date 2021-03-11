@@ -15,7 +15,7 @@ export class LocationService {
   private listOfCountriesUrl: string = 'https://restcountries.eu/rest/v2/all?fields=name;flag;alpha2Code';
   private userCountryUrl: string = 'https://geo.ipify.org/api/v1?apiKey=at_GCRdEPtdX2ckCQIjUkHUdBWvivodO';
   private listOfCitiesUrlBase: string = 'https://secure.geonames.org/searchJSON?username=alazarevic&country=';
-  private listOfCitiesUrlParams: string = '&style=SHORT&maxRows=1000';
+  private listOfCitiesUrlParams: string = '&style=SHORT&maxRows=500';
 
   constructor(private http: HttpClient) { }
 
@@ -41,7 +41,7 @@ export class LocationService {
    * Method which will return list of cities by selected country.
    * @param countryCode code that represents country
    */
-  public getListOfCitiesByCountry(countryCode: string): Observable<Array<City>> { // TODO Consider lovering this to below 1000 (performance-wise)
+  public getListOfCitiesByCountry(countryCode: string): Observable<Array<City>> { // This could be improved, to use Like Search insted of Full Text Search.
     return this.http.get<Cities>(this.listOfCitiesUrlBase + countryCode + this.listOfCitiesUrlParams).pipe(
       map(response => {
         return response.geonames;

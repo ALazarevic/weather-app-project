@@ -7,8 +7,7 @@ import { AppState, State } from 'src/app/core/store/store.reducers';
 
 @Component({
   selector: 'app-next-seven-days-forecast',
-  templateUrl: './next-seven-days-forecast.component.html',
-  styleUrls: ['./next-seven-days-forecast.component.scss']
+  templateUrl: './next-seven-days-forecast.component.html'
 })
 export class NextSevenDaysForecastComponent implements OnInit, OnDestroy {
 
@@ -38,5 +37,4 @@ export class NextSevenDaysForecastComponent implements OnInit, OnDestroy {
       this.subscription.unsubscribe();
     }
   }
-
 }

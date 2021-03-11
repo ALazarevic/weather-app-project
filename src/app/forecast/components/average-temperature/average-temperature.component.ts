@@ -5,8 +5,7 @@ import { AppState, State } from 'src/app/core/store/store.reducers';
 
 @Component({
   selector: 'app-average-temperature',
-  templateUrl: './average-temperature.component.html',
-  styleUrls: ['./average-temperature.component.scss']
+  templateUrl: './average-temperature.component.html'
 })
 export class AverageTemperatureComponent implements OnInit, OnDestroy {
 

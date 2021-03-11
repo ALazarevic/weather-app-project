@@ -1,9 +1,9 @@
 export class ForecastDay {
-    date: string;
-    averageTemperature: number;
+  date: string;
+  averageTemperature: number;
 
-    constructor(date: string, averageTemperature: number) {
-        this.date = date;
-        this.averageTemperature = averageTemperature;
-    }
+  constructor(date: string, averageTemperature: number) {
+    this.date = date;
+    this.averageTemperature = averageTemperature;
+  }
 }

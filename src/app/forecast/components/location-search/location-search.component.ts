@@ -13,8 +13,7 @@ import { AppState } from 'src/app/core/store/store.reducers';
 
 @Component({
   selector: 'app-location-search',
-  templateUrl: './location-search.component.html',
-  styleUrls: ['./location-search.component.scss']
+  templateUrl: './location-search.component.html'
 })
 export class LocationSearchComponent implements OnInit {
 

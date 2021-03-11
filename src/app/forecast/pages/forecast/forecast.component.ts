@@ -5,8 +5,7 @@ import { AppState, State } from 'src/app/core/store/store.reducers';
 
 @Component({
   selector: 'app-forecast',
-  templateUrl: './forecast.component.html',
-  styleUrls: ['./forecast.component.scss']
+  templateUrl: './forecast.component.html'
 })
 export class ForecastComponent implements OnInit, OnDestroy {
 

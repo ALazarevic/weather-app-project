@@ -1,5 +1,5 @@
 export interface Country {
-    alpha2Code: string,
-    flag: string,
-    name: string
+  alpha2Code: string,
+  flag: string,
+  name: string
 }
