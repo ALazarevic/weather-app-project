@@ -14,7 +14,7 @@ export class LocationService {
 
   private listOfCountriesUrl: string = 'https://restcountries.eu/rest/v2/all?fields=name;flag;alpha2Code';
   private userCountryUrl: string = 'https://geo.ipify.org/api/v1?apiKey=at_GCRdEPtdX2ckCQIjUkHUdBWvivodO';
-  private listOfCitiesUrlBase: string = 'http://api.geonames.org/searchJSON?username=alazarevic&country=';
+  private listOfCitiesUrlBase: string = 'https://secure.geonames.org/searchJSON?username=alazarevic&country=';
   private listOfCitiesUrlParams: string = '&style=SHORT&maxRows=1000';
 
   constructor(private http: HttpClient) { }
