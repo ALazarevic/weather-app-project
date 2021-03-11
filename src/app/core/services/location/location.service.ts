@@ -12,8 +12,8 @@ import { City } from '../../models/city.model';
 })
 export class LocationService {
 
-  private listOfCountriesUrl: string = 'http://restcountries.eu/rest/v2/all?fields=name;flag;alpha2Code';
-  private userCountryUrl: string = 'http://ip-api.com/json/?fields=status,message,country,countryCode';
+  private listOfCountriesUrl: string = 'https://restcountries.eu/rest/v2/all?fields=name;flag;alpha2Code';
+  private userCountryUrl: string = 'https://geo.ipify.org/api/v1?apiKey=at_GCRdEPtdX2ckCQIjUkHUdBWvivodO';
   private listOfCitiesUrlBase: string = 'http://api.geonames.org/searchJSON?username=alazarevic&country=';
   private listOfCitiesUrlParams: string = '&style=SHORT&maxRows=1000';
 

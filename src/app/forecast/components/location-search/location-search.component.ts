@@ -62,7 +62,7 @@ export class LocationSearchComponent implements OnInit {
   private getUserCountry(): void {
     this.locationService.getUserCountry().subscribe((response: UserCountry) => {
       this.ngSelect.itemsList.items.forEach(item => {
-        if (item.label === response.countryCode) {
+        if (item.label === response.location.country) {
           this.ngSelect.select(item);
           this.getListOfCities();
           this.isCountryListLoading = false;

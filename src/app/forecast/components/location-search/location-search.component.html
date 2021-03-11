@@ -8,7 +8,8 @@
             <ng-select #countrySelect formControlName="countryList" [virtualScroll]="true"
                 (change)="onCountryCodeSelectionChange()" (close)="getListOfCities()" [searchFn]="customSearchFn"
                 [items]="listOfCountries" bindLabel="alpha2Code" bindValue="alpha2Code" [clearable]="false"
-                [loading]="isCountryListLoading" class="c-location-search__country-select col-10 col-md-10 pr-0">
+                [loading]="isCountryListLoading"
+                class="c-location-search__country-select col-10 col-md-10 pr-0 mb-sm-2 mb-md-0">
                 <ng-template ng-label-tmp let-item="item">
                     <img height="15" width="25" [src]="item.flag" />
                     <b>{{item.alpha2Code}}</b>
