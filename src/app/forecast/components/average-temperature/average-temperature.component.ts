@@ -21,9 +21,7 @@ export class AverageTemperatureComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subscription = this.store.select('store').subscribe((state: State) => {
       const averageTemps: number[] = state.weather.data?.slice(1).map(weatherForDay => { // skip first item, api returns current day.
-        return (
-          (weatherForDay.max_temp + weatherForDay.min_temp) / 2
-        )
+        return (weatherForDay.max_temp + weatherForDay.min_temp) / 2;
       })
 
       if (state.weather.data) {
@@ -31,7 +29,7 @@ export class AverageTemperatureComponent implements OnInit, OnDestroy {
         this.lastForecastDay = state.weather.data[state.weather.data.length - 1].datetime;
       }
 
-      this.avarageTemp = Math.round(averageTemps?.reduce((a, b) => a + b) / 7);
+      this.avarageTemp = Math.round(averageTemps?.reduce((a, b) => a + b) / 10);
 
       this.showAverageTemp = !!state.weather.data;
 
@@ -40,13 +38,13 @@ export class AverageTemperatureComponent implements OnInit, OnDestroy {
           return weatherForDay.min_temp;
         });
 
-        const averageMin: number = Math.round(averageMinTemps?.reduce((a, b) => a + b) / 7);
+        const averageMin: number = Math.round(averageMinTemps?.reduce((a, b) => a + b) / 10);
 
         const averageMaxTemps: number[] = state.weather.data?.slice(1).map(weatherForDay => { // skip first item, api returns current day.
           return weatherForDay.max_temp;
         });
 
-        const averageMax: number = Math.round(averageMaxTemps?.reduce((a, b) => a + b) / 7);
+        const averageMax: number = Math.round(averageMaxTemps?.reduce((a, b) => a + b) / 10);
 
         const colorOfMin = 40 + 240 * (40 - averageMin) / 60;
         const colorOfMax = 40 + 240 * (40 - averageMax) / 60;
